@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -687,6 +688,94 @@
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fillEqually" orientation="horizontal" alignment="bottom" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJt-YO-4b5">
+                                <rect key="frame" x="20" y="240" width="360" height="140"/>
+                                <subviews>
+                                    <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="13" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4k6-og-RrF">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="140"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ge3-T1-Q3S">
+                                                <rect key="frame" x="44" y="121" width="93" height="19"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Current Date" id="DWb-Cb-Gro">
+                                                    <font key="font" metaFont="system" size="15"/>
+                                                    <color key="textColor" name="TextColor"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xqz-QZ-nel">
+                                                <rect key="frame" x="38" y="32" width="104" height="76"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="25°" id="9go-PA-rER">
+                                                    <font key="font" metaFont="system" size="64"/>
+                                                    <color key="textColor" name="TextColor"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hgA-dn-GYh">
+                                                <rect key="frame" x="44" y="0.0" width="92" height="19"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Kyiv, Ukraine" id="0zF-0V-Bkh">
+                                                    <font key="font" metaFont="system" size="15"/>
+                                                    <color key="textColor" name="TextColor"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVA-Gw-vuX">
+                                        <rect key="frame" x="180" y="0.0" width="180" height="139"/>
+                                        <subviews>
+                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dvx-kK-Bo2">
+                                                <rect key="frame" x="35" y="29" width="110" height="110"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="1sd-nO-iqO"/>
+                                                    <constraint firstAttribute="width" secondItem="Dvx-kK-Bo2" secondAttribute="height" multiplier="1:1" id="mel-BZ-HPc"/>
+                                                </constraints>
+                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Clear" id="5LU-Hp-SfD"/>
+                                            </imageView>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MU0-fd-7Ry">
+                                                <rect key="frame" x="70" y="0.0" width="40" height="19"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Clear" id="7oz-hi-Qbh">
+                                                    <font key="font" metaFont="system" size="15"/>
+                                                    <color key="textColor" name="TextColor"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="WJt-YO-4b5" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="LuZ-tZ-Wxf"/>
+                            <constraint firstAttribute="trailing" secondItem="WJt-YO-4b5" secondAttribute="trailing" constant="20" symbolic="YES" id="QNv-mb-bSv"/>
+                            <constraint firstItem="WJt-YO-4b5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="Z8e-Lg-7tk"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -694,4 +783,10 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Clear" width="107" height="107"/>
+        <namedColor name="TextColor">
+            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

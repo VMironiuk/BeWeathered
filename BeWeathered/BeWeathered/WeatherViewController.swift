@@ -7,5 +7,12 @@
 
 import Cocoa
 
-class WeatherViewController: NSViewController {}
+class WeatherViewController: NSViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.wantsLayer = true
+        view.layer?.backgroundColor = NSColor.controlAccentColor.cgColor
+    }
+}
 
