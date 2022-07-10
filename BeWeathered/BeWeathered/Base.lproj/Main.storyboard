@@ -770,13 +770,52 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeZ-RW-2qH">
+                                <rect key="frame" x="20" y="56" width="360" height="164"/>
+                                <clipView key="contentView" drawsBackground="NO" id="CJ8-Zx-2u2">
+                                    <rect key="frame" x="0.0" y="0.0" width="360" height="164"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="pVi-Mw-ZUq">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="gPP-vU-ddl">
+                                                <size key="itemSize" width="124" height="124"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="kta-SZ-wzA"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Gmj-cT-PGl">
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="HAr-ML-aij">
+                                    <rect key="frame" x="-100" y="-100" width="16" height="130"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="WJt-YO-4b5" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="LuZ-tZ-Wxf"/>
                             <constraint firstAttribute="trailing" secondItem="WJt-YO-4b5" secondAttribute="trailing" constant="20" symbolic="YES" id="QNv-mb-bSv"/>
                             <constraint firstItem="WJt-YO-4b5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="Z8e-Lg-7tk"/>
+                            <constraint firstAttribute="trailing" secondItem="QeZ-RW-2qH" secondAttribute="trailing" constant="20" symbolic="YES" id="aua-Uc-rYp"/>
+                            <constraint firstItem="QeZ-RW-2qH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="icE-9L-KVW"/>
+                            <constraint firstItem="QeZ-RW-2qH" firstAttribute="top" secondItem="WJt-YO-4b5" secondAttribute="bottom" constant="20" id="vIp-Yg-QeC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="pVi-Mw-ZUq" id="now-Sh-d1U"/>
+                        <outlet property="currentDateLable" destination="ge3-T1-Q3S" id="ufc-A0-eXv"/>
+                        <outlet property="locationLabel" destination="hgA-dn-GYh" id="PTU-r8-BSR"/>
+                        <outlet property="temperatureLabel" destination="Xqz-QZ-nel" id="0pc-l6-ZB8"/>
+                        <outlet property="weatherConditionImageView" destination="Dvx-kK-Bo2" id="7mg-1v-6XG"/>
+                        <outlet property="weatherConditionLabel" destination="MU0-fd-7Ry" id="Sv7-Og-8zi"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -786,7 +825,7 @@
     <resources>
         <image name="Clear" width="107" height="107"/>
         <namedColor name="TextColor">
-            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93300002813339233" green="0.93300002813339233" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

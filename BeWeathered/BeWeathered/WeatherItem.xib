@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="WeatherItem" customModule="BeWeathered" customModuleProvider="target">
+            <connections>
+                <outlet property="dateLabel" destination="LPB-z7-o2J" id="nbM-Bn-bzi"/>
+                <outlet property="maximumTemperatureLabel" destination="xcy-02-8nO" id="uD6-uo-B5i"/>
+                <outlet property="minimumTemperatureLabel" destination="nM8-0u-rFn" id="A14-Jl-pZY"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="WeatherItem" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LPB-z7-o2J">
+                    <rect key="frame" x="39" y="101" width="46" height="19"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Friday" id="YUO-6X-0Cc">
+                        <font key="font" metaFont="system" size="15"/>
+                        <color key="textColor" name="TextColor"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nM8-0u-rFn">
+                    <rect key="frame" x="26" y="4" width="27" height="19"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="12°" id="2W1-R1-vV5">
+                        <font key="font" metaFont="system" size="15"/>
+                        <color key="textColor" name="TextColor"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bke-ya-7Zm">
+                    <rect key="frame" x="57" y="4" width="11" height="19"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="-" id="kVh-IP-KLB">
+                        <font key="font" metaFont="system" size="15"/>
+                        <color key="textColor" name="TextColor"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xcy-02-8nO">
+                    <rect key="frame" x="72" y="4" width="29" height="19"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="23°" id="76z-ic-93r">
+                        <font key="font" metaFont="system" size="15"/>
+                        <color key="textColor" name="TextColor"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Av8-CT-Qw9">
+                    <rect key="frame" x="30" y="30" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="1Pb-Hz-ufw"/>
+                        <constraint firstAttribute="width" constant="64" id="7pI-7p-HbU"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Clear" id="vCW-SJ-vHZ"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Av8-CT-Qw9" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="53r-BY-fzf"/>
+                <constraint firstAttribute="bottom" secondItem="nM8-0u-rFn" secondAttribute="bottom" constant="4" id="8dV-by-sGg"/>
+                <constraint firstAttribute="bottom" secondItem="xcy-02-8nO" secondAttribute="bottom" constant="4" id="BsA-NO-X8I"/>
+                <constraint firstItem="Bke-ya-7Zm" firstAttribute="leading" secondItem="nM8-0u-rFn" secondAttribute="trailing" constant="8" symbolic="YES" id="Jy4-MC-btJ"/>
+                <constraint firstItem="LPB-z7-o2J" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="4" id="KGH-da-pSm"/>
+                <constraint firstAttribute="bottom" secondItem="Bke-ya-7Zm" secondAttribute="bottom" constant="4" id="KPa-TH-j9i"/>
+                <constraint firstItem="Bke-ya-7Zm" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="UIm-kf-Wqb"/>
+                <constraint firstItem="LPB-z7-o2J" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="juT-m0-Gnq"/>
+                <constraint firstItem="xcy-02-8nO" firstAttribute="leading" secondItem="Bke-ya-7Zm" secondAttribute="trailing" constant="8" symbolic="YES" id="nCP-G6-S1n"/>
+                <constraint firstItem="Av8-CT-Qw9" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="tPc-5B-M7Y"/>
+            </constraints>
+            <point key="canvasLocation" x="119.5" y="130.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="Clear" width="107" height="107"/>
+        <namedColor name="TextColor">
+            <color red="0.93300002813339233" green="0.93300002813339233" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
