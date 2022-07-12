@@ -16,10 +16,13 @@ class WeatherViewController: NSViewController {
     @IBOutlet private weak var weatherConditionLabel: NSTextField!
     @IBOutlet private weak var collectionView: NSCollectionView!
     
+    var weatherLoader: WeatherLoader?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupCollectionView()
+        weatherLoader?.load()
     }
     
     private func setupView() {

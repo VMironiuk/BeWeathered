@@ -24,7 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc private func onStatusItemButtonPressed() {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         let weatherVC = storyboard.instantiateController(
-            withIdentifier: "WeatherViewController") as! NSViewController
+            withIdentifier: "WeatherViewController") as! WeatherViewController
+        weatherVC.weatherLoader = makeWeatherLoader()
         
         let popover = NSPopover()
         popover.contentViewController = weatherVC
@@ -33,6 +34,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             relativeTo: statusItem.button!.bounds,
             of: statusItem.button!,
             preferredEdge: .maxY)
+    }
+    
+    private func makeWeatherLoader() -> WeatherLoader {
+        WeatherLoader(client: HTTPClient())
     }
 
 }
