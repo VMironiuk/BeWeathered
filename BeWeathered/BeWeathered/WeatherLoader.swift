@@ -22,10 +22,44 @@ final class WeatherLoader {
         self.client = client
     }
     
-    func load() {
-        let url = URL(string: "https://some-url")!
+    func load(completion: @escaping (Weather) -> Void) {
+        let url = URL(string: "https://some-url.com")!
         client.get(from: url) { data, response, error in
-            print(String(data: data!, encoding: .utf8) ?? "")
+            let decoder = JSONDecoder()
+            let weatherService = try! decoder.decode(WeatherService.self, from: data!)
+            completion(Weather(service: weatherService))
+        }
+    }
+}
+
+private extension Weather {
+    init(service: WeatherService) {
+        cityName = service.name ?? "--"
+        
+        if let temp = service.main.temp {
+            temperature = "\(Int(temp))°"
+        }
+        else {
+            temperature = "--°"
+        }
+        
+        if let main = service.weather.first?.main {
+            condition = main
+        }
+        else {
+            condition = "--"
+        }
+        
+        if let dt = service.dt {
+            let currentDate = Date(timeIntervalSince1970: Double(dt))
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .full
+            dateFormatter.timeStyle = .none
+            dateFormatter.timeZone = .current
+            date = dateFormatter.string(from: currentDate)
+        }
+        else {
+            date = "Today --"
         }
     }
 }

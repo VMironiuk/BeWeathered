@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2DC8ED2881357700F56A49 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2DC8EC2881357700F56A49 /* WeatherService.swift */; };
+		2E2DC8EF28813B4500F56A49 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2DC8EE28813B4500F56A49 /* Weather.swift */; };
 		2E3BDE3728770A1600AE18B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BDE3628770A1600AE18B9 /* AppDelegate.swift */; };
 		2E3BDE3928770A1600AE18B9 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BDE3828770A1600AE18B9 /* WeatherViewController.swift */; };
 		2E3BDE3B28770A1700AE18B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E3BDE3A28770A1700AE18B9 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E2DC8EC2881357700F56A49 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		2E2DC8EE28813B4500F56A49 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		2E3BDE3328770A1600AE18B9 /* BeWeathered.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeWeathered.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E3BDE3628770A1600AE18B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E3BDE3828770A1600AE18B9 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 				2E853499287D3D5800CBC62F /* WeatherLoader.swift */,
 				2E9ACF7E287B2B1A00F02858 /* WeatherItem.swift */,
 				2E9ACF7F287B2B1A00F02858 /* WeatherItem.xib */,
+				2E2DC8EC2881357700F56A49 /* WeatherService.swift */,
+				2E2DC8EE28813B4500F56A49 /* Weather.swift */,
 				2E3BDE3A28770A1700AE18B9 /* Assets.xcassets */,
 				2E3BDE3C28770A1700AE18B9 /* Main.storyboard */,
 				2E3BDE3F28770A1700AE18B9 /* BeWeathered.entitlements */,
@@ -267,6 +273,8 @@
 				2E85349A287D3D5800CBC62F /* WeatherLoader.swift in Sources */,
 				2E3BDE3728770A1600AE18B9 /* AppDelegate.swift in Sources */,
 				2E9ACF80287B2B1A00F02858 /* WeatherItem.swift in Sources */,
+				2E2DC8EF28813B4500F56A49 /* Weather.swift in Sources */,
+				2E2DC8ED2881357700F56A49 /* WeatherService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

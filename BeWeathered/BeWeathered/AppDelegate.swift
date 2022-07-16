@@ -11,10 +11,17 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    private let weatherLoader = WeatherLoader(client: HTTPClient())
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.button?.title = "--°"
         statusItem.button?.action = #selector(onStatusItemButtonPressed)
+        
+        weatherLoader.load { [weak self] weather in
+            DispatchQueue.main.async {
+                self?.statusItem.button?.title = weather.temperature
+            }
+        }
     }
 
     func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {

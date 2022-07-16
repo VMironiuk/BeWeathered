@@ -22,7 +22,11 @@ class WeatherViewController: NSViewController {
         super.viewDidLoad()
         setupView()
         setupCollectionView()
-        weatherLoader?.load()
+        weatherLoader?.load { [weak self] weather in
+            DispatchQueue.main.async {
+                self?.updateUI(with: weather)
+            }
+        }
     }
     
     private func setupView() {
@@ -34,6 +38,14 @@ class WeatherViewController: NSViewController {
         let itemId = NSUserInterfaceItemIdentifier(rawValue: "WeatherItem")
         collectionView.register(WeatherItem.self, forItemWithIdentifier: itemId)
         collectionView.dataSource = self
+    }
+    
+    private func updateUI(with weather: Weather) {
+        currentDateLable.stringValue = weather.date
+        temperatureLabel.stringValue = weather.temperature
+        locationLabel.stringValue = weather.cityName
+        weatherConditionImageView.image = NSImage(named: weather.condition)
+        weatherConditionLabel.stringValue = weather.condition
     }
 }
 
