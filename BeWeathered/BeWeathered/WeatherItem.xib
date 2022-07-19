@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="WeatherItem" customModule="BeWeathered" customModuleProvider="target">
             <connections>
+                <outlet property="conditionImageView" destination="Av8-CT-Qw9" id="RrV-AE-DkR"/>
                 <outlet property="dateLabel" destination="LPB-z7-o2J" id="nbM-Bn-bzi"/>
                 <outlet property="maximumTemperatureLabel" destination="xcy-02-8nO" id="uD6-uo-B5i"/>
                 <outlet property="minimumTemperatureLabel" destination="nM8-0u-rFn" id="A14-Jl-pZY"/>

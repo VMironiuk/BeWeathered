@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.button?.title = "--°"
         statusItem.button?.action = #selector(onStatusItemButtonPressed)
         
-        weatherLoader.load { [weak self] weather in
+        weatherLoader.loadWeather { [weak self] weather in
             DispatchQueue.main.async {
                 self?.statusItem.button?.title = weather.temperature
             }

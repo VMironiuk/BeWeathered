@@ -12,8 +12,12 @@ class WeatherItem: NSCollectionViewItem {
     @IBOutlet private weak var dateLabel: NSTextField!
     @IBOutlet private weak var minimumTemperatureLabel: NSTextField!
     @IBOutlet private weak var maximumTemperatureLabel: NSTextField!
+    @IBOutlet private weak var conditionImageView: NSImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func configure(with forecast: Forecast) {
+        dateLabel.stringValue = forecast.date
+        minimumTemperatureLabel.stringValue = forecast.minTemperature
+        maximumTemperatureLabel.stringValue = forecast.maxTemperature
+        conditionImageView.image = NSImage(named: forecast.condition)
     }
 }

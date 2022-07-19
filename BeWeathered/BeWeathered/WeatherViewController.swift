@@ -16,15 +16,23 @@ class WeatherViewController: NSViewController {
     @IBOutlet private weak var weatherConditionLabel: NSTextField!
     @IBOutlet private weak var collectionView: NSCollectionView!
     
+    private var forecast: [Forecast] = []
+    
     var weatherLoader: WeatherLoader?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupCollectionView()
-        weatherLoader?.load { [weak self] weather in
+        weatherLoader?.loadWeather { [weak self] weather in
             DispatchQueue.main.async {
                 self?.updateUI(with: weather)
+            }
+        }
+        weatherLoader?.loadForecast { [weak self] forecast in
+            DispatchQueue.main.async {
+                self?.forecast = forecast
+                self?.collectionView.reloadData()
             }
         }
     }
@@ -56,7 +64,7 @@ extension WeatherViewController: NSCollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        7
+        forecast.count
     }
     
     func collectionView(
@@ -64,7 +72,8 @@ extension WeatherViewController: NSCollectionViewDataSource {
         itemForRepresentedObjectAt indexPath: IndexPath
     ) -> NSCollectionViewItem {
         let itemId = NSUserInterfaceItemIdentifier(rawValue: "WeatherItem")
-        let item = collectionView.makeItem(withIdentifier: itemId, for: indexPath)
+        let item = collectionView.makeItem(withIdentifier: itemId, for: indexPath) as! WeatherItem
+        item.configure(with: forecast[indexPath.item])
         return item
     }
 }

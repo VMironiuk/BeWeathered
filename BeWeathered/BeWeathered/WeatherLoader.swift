@@ -22,12 +22,22 @@ final class WeatherLoader {
         self.client = client
     }
     
-    func load(completion: @escaping (Weather) -> Void) {
+    func loadWeather(completion: @escaping (Weather) -> Void) {
         let url = URL(string: "https://some-url.com")!
         client.get(from: url) { data, response, error in
             let decoder = JSONDecoder()
             let weatherService = try! decoder.decode(WeatherService.self, from: data!)
             completion(Weather(service: weatherService))
+        }
+    }
+    
+    func loadForecast(completion: @escaping ([Forecast]) -> Void) {
+        let url = URL(string: "https://some-url.com")!
+        client.get(from: url) { data, response, error in
+            let decoder = JSONDecoder()
+            let forecastService = try! decoder.decode(ForecastService.self, from: data!)
+            guard let forecastList = forecastService.list else { return { completion([]) }() }
+            completion(forecastList.compactMap {Forecast(forecastList: $0)})
         }
     }
 }
@@ -60,6 +70,43 @@ private extension Weather {
         }
         else {
             date = "Today --"
+        }
+    }
+}
+
+private extension Forecast {
+    init(forecastList: ForecastList) {
+        if let main = forecastList.weather?.first?.main {
+            condition = main
+        }
+        else {
+            condition = "--"
+        }
+        
+        if let temp_min = forecastList.main?.temp_min {
+            minTemperature = "\(temp_min)°"
+        }
+        else {
+            minTemperature = "--°"
+        }
+        
+        if let temp_max = forecastList.main?.temp_max {
+            maxTemperature = "\(temp_max)°"
+        }
+        else {
+            maxTemperature = "--°"
+        }
+        
+        if let dt = forecastList.dt {
+            let currentDate = Date(timeIntervalSince1970: Double(dt))
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            dateFormatter.timeStyle = .short
+            dateFormatter.timeZone = .current
+            date = dateFormatter.string(from: currentDate)
+        }
+        else {
+            date = "--"
         }
     }
 }
