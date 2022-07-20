@@ -778,7 +778,7 @@
                                     <subviews>
                                         <collectionView id="pVi-Mw-ZUq">
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="158"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="gPP-vU-ddl">
                                                 <size key="itemSize" width="124" height="124"/>
                                             </collectionViewFlowLayout>
@@ -798,14 +798,39 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="swz-Bi-9q1">
+                                <rect key="frame" x="327" y="13" width="60" height="32"/>
+                                <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kjJ-E3-v1G">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="quitAction:" target="XfG-lQ-9wD" id="uSM-Ru-SWV"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4jc-Mb-jdg">
+                                <rect key="frame" x="13" y="13" width="191" height="32"/>
+                                <buttonCell key="cell" type="push" title="Powered by OpenWeather" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lgE-LY-McQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openWeatherAction:" target="XfG-lQ-9wD" id="8JG-Gw-epC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4jc-Mb-jdg" secondAttribute="bottom" constant="20" symbolic="YES" id="GPL-jk-hHL"/>
                             <constraint firstItem="WJt-YO-4b5" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="LuZ-tZ-Wxf"/>
                             <constraint firstAttribute="trailing" secondItem="WJt-YO-4b5" secondAttribute="trailing" constant="20" symbolic="YES" id="QNv-mb-bSv"/>
                             <constraint firstItem="WJt-YO-4b5" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="Z8e-Lg-7tk"/>
                             <constraint firstAttribute="trailing" secondItem="QeZ-RW-2qH" secondAttribute="trailing" constant="20" symbolic="YES" id="aua-Uc-rYp"/>
+                            <constraint firstAttribute="trailing" secondItem="swz-Bi-9q1" secondAttribute="trailing" constant="20" symbolic="YES" id="ff5-1K-4oU"/>
                             <constraint firstItem="QeZ-RW-2qH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="icE-9L-KVW"/>
+                            <constraint firstItem="4jc-Mb-jdg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="uOf-cZ-mfk"/>
                             <constraint firstItem="QeZ-RW-2qH" firstAttribute="top" secondItem="WJt-YO-4b5" secondAttribute="bottom" constant="20" id="vIp-Yg-QeC"/>
+                            <constraint firstAttribute="bottom" secondItem="swz-Bi-9q1" secondAttribute="bottom" constant="20" symbolic="YES" id="vMv-Fh-VRk"/>
+                            <constraint firstItem="swz-Bi-9q1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4jc-Mb-jdg" secondAttribute="trailing" constant="12" symbolic="YES" id="yEW-YP-gBR"/>
                         </constraints>
                     </view>
                     <connections>

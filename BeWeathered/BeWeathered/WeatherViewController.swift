@@ -37,6 +37,16 @@ class WeatherViewController: NSViewController {
         }
     }
     
+    
+    @IBAction private func openWeatherAction(_ sender: NSButton) {
+        let url = URL(string: "https://openweathermap.org")!
+        NSWorkspace.shared.open(url)
+    }
+    
+    @IBAction private func quitAction(_ sender: NSButton) {
+        NSApplication.shared.terminate(self)
+    }
+    
     private func setupView() {
         view.wantsLayer = true
         view.layer?.backgroundColor = NSColor.controlAccentColor.cgColor
