@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import CoreLocation
 
 class WeatherViewController: NSViewController {
 
@@ -19,6 +20,11 @@ class WeatherViewController: NSViewController {
     private var forecast: [Forecast] = []
     
     var weatherLoader: WeatherLoader?
+    var location: Location? {
+        didSet {
+            update()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +50,13 @@ class WeatherViewController: NSViewController {
     }
     
     @objc private func update() {
-        weatherLoader?.loadWeather { [weak self] weather in
+        guard let location = location else { return }
+        weatherLoader?.loadWeather(for: location) { [weak self] weather in
             DispatchQueue.main.async {
                 self?.updateUI(with: weather)
             }
         }
-        weatherLoader?.loadForecast { [weak self] forecast in
+        weatherLoader?.loadForecast(for: location) { [weak self] forecast in
             DispatchQueue.main.async {
                 self?.forecast = forecast
                 self?.collectionView.reloadData()

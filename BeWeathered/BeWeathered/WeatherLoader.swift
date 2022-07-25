@@ -22,7 +22,7 @@ final class WeatherLoader {
         self.client = client
     }
     
-    func loadWeather(completion: @escaping (Weather) -> Void) {
+    func loadWeather(for location: Location, completion: @escaping (Weather) -> Void) {
         let url = URL(string: "https://some-url.com")!
         client.get(from: url) { data, response, error in
             let decoder = JSONDecoder()
@@ -31,7 +31,7 @@ final class WeatherLoader {
         }
     }
     
-    func loadForecast(completion: @escaping ([Forecast]) -> Void) {
+    func loadForecast(for location: Location, completion: @escaping ([Forecast]) -> Void) {
         let url = URL(string: "https://some-url.com")!
         client.get(from: url) { data, response, error in
             let decoder = JSONDecoder()
